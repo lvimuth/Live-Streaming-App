@@ -22,6 +22,32 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const Text(
+              'Join the live streaming revolution and connect with your audience seamlessly. Sign in with Google to get started.',
+              style: TextStyle(
+                fontSize: 15,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Image.asset(
+              'assets/images/live.png',
+              height: MediaQuery.of(context).size.height * 0.3,
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+            const Text(
+              'Sign in with Google to get started',
+              style: TextStyle(
+                fontSize: 15,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
