@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "123189347991",
+    "project_id": "live-stream-app-fb97f",
+    "storage_bucket": "live-stream-app-fb97f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123189347991:android:e0928f9609720ddf334bd2",
+        "android_client_info": {
+          "package_name": "com.example.live_stream_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZr1tm0ZGn-XwQqGPZ3sJ55lSBQxv2dKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
