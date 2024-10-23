@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:live_stream_app/pages/home_page.dart';
+import 'package:live_stream_app/services/auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -9,6 +11,43 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _isLoading = false;
+
+  Future<void> _signInWithGoogle() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      await AuthService().signInWithGoogle();
+      // Navigate to MainPage only if sign-in is successful
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomePage(),
+        ),
+      );
+    } catch (e) {
+      showDialog(
+        // ignore: use_build_context_synchronously
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text('Error'),
+          content: Text('Error signing in with Google: $e'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('OK'),
+            ),
+          ],
+        ),
+      );
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 backgroundColor: Colors.orangeAccent,
               ),
-              onPressed: () {},
+              onPressed: _isLoading ? null : _signInWithGoogle,
               child: _isLoading
                   ? const Center(
                       child: Row(
