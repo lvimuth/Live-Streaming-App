@@ -42,6 +42,7 @@ dependencies:
   zego_uikit_signaling_plugin: ^2.8.6
   zego_uikit_prebuilt_live_streaming: ^3.13.5
   google_fonts: ^6.2.1
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:

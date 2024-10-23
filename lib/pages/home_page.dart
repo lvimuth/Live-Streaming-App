@@ -11,7 +11,7 @@ import 'package:live_stream_app/services/auth.dart';
 import 'package:zego_uikit_prebuilt_live_streaming/zego_uikit_prebuilt_live_streaming.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  HomePage({super.key});
 
   /// Users who use the same liveID can join the same live streaming.
   final liveTextCtrl =
