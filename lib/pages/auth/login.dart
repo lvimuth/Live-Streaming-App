@@ -45,6 +45,41 @@ class _LoginPageState extends State<LoginPage> {
                 fontSize: 15,
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                backgroundColor: Colors.orangeAccent,
+              ),
+              onPressed: () {},
+              child: _isLoading
+                  ? const Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Signing in...',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                          CircularProgressIndicator(),
+                        ],
+                      ),
+                    )
+                  : const Text(
+                      'Sign in with Google',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+            ),
           ],
         ),
       ),
