@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => AuthService().getCurrentUser() != null
                       ? HomePage()
-                      : LoginPage(),
+                      : const LoginPage(),
                 ),
               );
             },
@@ -117,7 +117,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
 
-              Divider(),
+              const Divider(),
 
               // Description Section
               const Text(
